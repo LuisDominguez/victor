@@ -1,0 +1,27 @@
+html,body{
+  margin: 0px;
+  font-family: 'Open Sans', sans-serif;
+}
+a:visited{
+ color: inherit !important;
+ text-decoration: none;
+}
+#logo{
+  font-size: 1.2em;
+}
+.no-margin{
+  margin: 0px
+}
+.be-red{
+  background-color: #690612;
+}
+.white{
+  color: #D4D1C9;
+}
+.large-padding{
+  padding: 10px 7px;
+}
+
+.navbar-default {
+  background-color: red !important;
+}
