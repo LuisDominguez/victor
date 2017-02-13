@@ -1,6 +1,7 @@
 class CreateArticles < ActiveRecord::Migration[5.0]
   def change
     create_table :articles do |t|
+      t.string :nombre
       t.string :title
       t.text :body
       t.integer :visits_count

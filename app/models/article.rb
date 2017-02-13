@@ -1,5 +1,4 @@
-class Article < ApplicationRecord
-#la tabla ==>articles
-#campos  ==>article.title()==>'el titulo del articulo'
-# escribir metodos
+class Article <ActiveRecord::Base
+  validates :title, presence: true
+  validates :body, presence: true 
 end

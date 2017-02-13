@@ -2,6 +2,17 @@ html,body{
   margin: 0px;
   font-family: 'Open Sans', sans-serif;
 }
+.tamano-inputs{
+  height:250px;
+}
+.btn{
+ background-color: inherit;
+ border: none;
+ outline: none;
+ text-transform: uppercase;
+ cursor: pointer;
+}
+
 a:visited{
  color: inherit !important;
  text-decoration: none;
@@ -24,4 +35,16 @@ a:visited{
 
 .navbar-default {
   background-color: red !important;
+}
+.field{
+  margin-top:1em;
+}
+.form-control{
+  border: none;
+  border-bottom: 1px solid;
+  outline: none;
+  width: 100%;
+  display: block;
+  padding: 10px 0px;
+  font-size: 1,2em;
 }
