@@ -1,27 +1,3 @@
-<div style="width:80%;margin:0 auto;"> </div>
-<h1> crear articulo </h1>
- <div class="container">
-   <div class="row">
-     <div class="col-md-8">
-
-     </div>
-   </div>
- </div>
-
-<%= form_for(@article) do |f| %>
-<% @article.errors.full_messages.each do |message| %>
-    <div class="be-red white ">
-      * <%= message %>
-    </div>
-<%end%>
-  <div class="field">
-   <%= f.text_field :title,placeholder: "titulo",class:"form-control" %>
-  </div>
-  <div class="field">
-     <%= f.text_area :body, placeholder: "escriba aqui el articulo", class:"form-control tamano-inputs" %>
-    </div>
-    <div class="field">
-      <%= f.submit "guardar",class:"btn color be-red white large-padding" %>
-    </div>
-  <%end%>
+<div style="width:80%;margin:0 auto;"> 
+  <%= render "form", name: "crear" %>
 </div>
