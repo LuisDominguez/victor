@@ -34,9 +34,17 @@
             <li><a href="programacion">programacion</a></li>
             <li><a href="tecnologia">tecnologia</a></li>
             <% if user_signed_in? %>
-              <li>
+              <li class="col-md">
                 <%= link_to "cerrar sesion",destroy_user_session_path, method: :delete %>
               </li>
+              <%else%>
+              <li class="col-md">
+                <%= link_to "iniciar sesion",new_user_session_path %>
+              </li>
+              <li class="col-md">
+                <%= link_to "crear cuenta",new_user_registration_path %>
+              </li>
+
             <%end%>
 
               </ul>
