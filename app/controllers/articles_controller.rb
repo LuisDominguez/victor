@@ -10,8 +10,12 @@ class ArticlesController < ApplicationController
 
   #get /articles/:id
   def show
-
+    @comment = Comment.new
+    @article = Article.find(params[:id])
+    @article.update_visits_count
   end
+
+
 
   #get /articles/new
   def new
@@ -29,7 +33,7 @@ class ArticlesController < ApplicationController
         redirect_to @article
       else
         render :new
-    end
+      end
   end
 
   def destroy
@@ -56,5 +60,4 @@ class ArticlesController < ApplicationController
   def article_params
       params.require(:article).permit(:title,:body)
   end
-
 end
