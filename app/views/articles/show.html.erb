@@ -4,6 +4,8 @@
   escrito por: <%= @article.user.email %>
 </p>
 <%end%>
+<div class="field">
+  <%= image_tag @article.cover.url() %>
 <p>
   visitas: <%= @article.visits_count %>
 </p>
@@ -12,9 +14,9 @@
 </div>
 <div class="field">
   <h3>comentarios</h3>
-  
+
   <%= render "comments/form" %>
-  <ul>
+  <ul id="comments-box">
       <% @article.comments.each do |comment| %>
       <li>
         <%= comment.body %> - <%= comment.user.email%>

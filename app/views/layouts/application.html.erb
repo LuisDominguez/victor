@@ -29,19 +29,25 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">inicio <span class="sr-only">(current)</span></a></li>
-            <li><a href="diseño">diseño</a></li>
-            <li><a href="programacion">programacion</a></li>
-            <li><a href="tecnologia">tecnologia</a></li>
+
+            <li class="col-md-5">
+              <li><a href="articles">Articulos</a>
+              </li>
+              <% @categories.each do |category| %>
+              <li class="cool-md-3">
+                <%= link_to category.name,category %>
+              </li>
+              <%end%>
+
             <% if user_signed_in? %>
-              <li class="col-md">
+              <li class="col-md-3">
                 <%= link_to "cerrar sesion",destroy_user_session_path, method: :delete %>
               </li>
               <%else%>
-              <li class="col-md">
+              <li class="col-md-3">
                 <%= link_to "iniciar sesion",new_user_session_path %>
               </li>
-              <li class="col-md">
+              <li class="col-md-3">
                 <%= link_to "crear cuenta",new_user_registration_path %>
               </li>
 

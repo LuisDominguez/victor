@@ -1,0 +1,11 @@
+I"I(function() {
+  $(document).on("ajax:success", "form#comments-form", function(ev, data) {
+    console.log(data);
+    $("#comments-box").append("<li> " + data.body + " - " + " </li>");
+    return $(document).on("ajax:error", "form#comments-form", function(ev, data) {
+      return console.log(data);
+    });
+  });
+
+}).call(this);
+:ET
