@@ -11,8 +11,12 @@ include AASM
   before_save :set_visits_count
   after_create :save_categories
 
-has_attached_file :cover, styles: { medium: "1280x720", thumb:"800x600" }
-validates_attachment_content_type :cover, content_type:  /\Aimage\/.*\Z/
+  has_attached_file :cover, styles: { medium: "1280x720", thumb:"800x600" }
+  validates_attachment_content_type :cover, content_type:  /\Aimage\/.*\Z/
+
+  scope :publicados, ->{ where(state: "published") }
+
+  scope :ultimos, ->{ order("created_at DESC") }
 
 
   def  categories=(value)
@@ -36,9 +40,8 @@ validates_attachment_content_type :cover, content_type:  /\Aimage\/.*\Z/
     end
   end
 
-
   private
-
+  #marca  el error estoy  en el curso 33 render
   def save_categories
     @categories.each do |category_id|
       HasCategory.create(category_id: category_id,article_id: self.id)

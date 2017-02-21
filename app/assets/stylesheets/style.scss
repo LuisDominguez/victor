@@ -23,11 +23,34 @@ a:visited{
   color: #E74C3C !important;
 }
 
+.blue{
+  color:#66CCFF !important;
+}
+
 #logo{
   font-size: 1.2em;
 }
 .no-margin{
   margin: 0px
+}
+.text-center{
+  text-align:center;
+}
+.text-right{
+  text-align:right;
+}
+.text-justify{
+  text-align: justify;
+}
+
+.be-big{
+  font-size:2em;
+}
+.be-small{
+  font-size:12px;
+}
+.underline{
+  text-decoration: underline;
 }
 
 .be-red{
@@ -36,8 +59,12 @@ a:visited{
 .white{
   color: #D4D1C9;
 }
+.grey{
+  color:#616161;
+}
+
 .large-padding{
-  padding: 10px 7px;
+  padding: 8px 5px;
 }
 
 .navbar-default {
@@ -46,9 +73,23 @@ a:visited{
 .field,.top-space,.actions{
   margin-top:1em;
 }
+.background-cover{
+  background-position: center;
+  background-size: cover;
+}
 
 .text-left{
   text-align: left;
+}
+.article-height{
+  height:150px;
+}
+
+.relative{
+  position:relative;;
+}
+.absolute{
+  position:absolute;
 }
 
 .form-control{
@@ -59,4 +100,7 @@ a:visited{
   display: block;
   padding: 10px 0px;
   font-size: 1,2em;
+}
+.bottom-space{
+  margin-bottom: 2em;
 }

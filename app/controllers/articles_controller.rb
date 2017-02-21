@@ -1,11 +1,12 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:show,:index]
   before_action :set_article, except: [:index,:new,:create]
+
   #get /articles
   def index
 
   # todos los registros
-    @articles =  Article.all
+    @articles =  Article.paginate(page: params[:page],per_page:10).ultimos
   end
 
   #get /articles/:id
@@ -49,6 +50,12 @@ class ArticlesController < ApplicationController
       render :edit
     end
   end
+
+  def publish
+    @article.publish!
+    redirect_to @article
+  end
+
 
   private
 
