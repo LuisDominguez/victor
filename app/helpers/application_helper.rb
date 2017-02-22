@@ -8,7 +8,7 @@ module ApplicationHelper
 
     html ="<header style='#{html_style}' class='#{html_class}'>"\
           "</header>"
-    html.html-safe
+    html.html_safe
   end
 
 end

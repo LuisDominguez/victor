@@ -10,6 +10,7 @@ include AASM
   validates :body, presence: true,length: {minimum: 20}
   before_save :set_visits_count
   after_create :save_categories
+  after_create :send_mail
 
   has_attached_file :cover, styles: { medium: "1280x720", thumb:"800x600" }
   validates_attachment_content_type :cover, content_type:  /\Aimage\/.*\Z/
@@ -41,7 +42,11 @@ include AASM
   end
 
   private
-  #marca  el error estoy  en el curso 33 render
+
+  def send_mail
+    ArticleMailer.new_article(self).deliver_later
+  end
+
   def save_categories
     @categories.each do |category_id|
       HasCategory.create(category_id: category_id,article_id: self.id)
